@@ -1,5 +1,4 @@
 <h1>My Portfolio</h1>
-
 <div class="search-area">
   <h3>Search Stocks</h3>
   <%= form_tag search_stock_path, remote: true, method: :get do %>
@@ -11,10 +10,12 @@
         <%= button_tag type: :submit, class: "btn btn-success" do%>
           <%= fa_icon 'search 2x' %>
         <% end %>
-      </div> 
+      </div>
     </div>
   <% end %>
 </div>
 <div id="results">
-
 </div>
+<% if !@tracked_stocks.empty? %>
+  <%= render 'stocks/list' %>
+<% end %>
