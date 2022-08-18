@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  
+
   def my_portfolio
     @tracked_stocks = current_user.stocks
   end
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
           flash.now[:alert] = "Couldn't find user"
           format.js { render partial: 'users/friend_result' }
         end
-      end
+      end    
     else
       respond_to do |format|
         flash.now[:alert] = "Please enter a friend name or email to search"
